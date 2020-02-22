@@ -3,6 +3,12 @@
     <head>
         <title>If-Else in JavaScript</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+#bug {
+    opacity: 0;
+    transition-duration: 0.75s;
+}
+        </style>
     </head>
 
     <body>
@@ -35,6 +41,17 @@
                 <li>Click the Run Code button.</li>
                 <li>I'll tell you if you got it right.</li>
             </ol>
+
+            <div id="bug">
+                <h2>Bug</h2>
+                <p>When you added 5, you might have noticed that instead of adding it arithmetically, JS just tacked the 5 onto the number. This is because <code>prompt</code> returns a string. Addition on a string and a number will simply concatenate the two.</p>
+                <pre><code>2 + 2 = 4
+    "2" + 2 = "22"
+    "2" - 2 = 0
+    "stuff" - 2 = NaN</code></pre>
+
+                <p>This is one of the many oddities from JS.</p>
+            </div>
         </div>
 
         <div id="right-editor">
@@ -120,7 +137,10 @@ function runCode() {
 
         /* Verify line 1. */
         if(value > 7 && gResult == value || value < 7 && gResult == value + 5) {
-            resultText.innerHTML = "Good job!"    
+            resultText.innerHTML = "Good job!";
+
+            /* Unhide bug. */
+            document.getElementById("bug").style.opacity = "1";
         } else {
             resultText.innerHTML = "No.";
         }
