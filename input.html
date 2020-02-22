@@ -12,22 +12,26 @@
             <p>In this tutorial you'll learn about alerts and prompts in JavaScript.</p>
 
             <h2>Explanation</h2>
-            <p>JavaScript</p>
+            <p>JavaScript has two built-in methods for showing information to the user, <code>alert</code> and <code>prompt</code>.</p>
             
-            <h2>Task</h2>
-            <p>Print "Hello World" to the console. Make sure you print the string letter for letter, this task is case-sensitive!</p>
+            <h3>Alert</h3>
+            <p>To show a small popup with text to the user, do <code>alert(text)</code>.</p>
+            <button onclick="demoAlert()">Click me to see an example alert</button>
 
-            <h2>Instructions</h2>
-            <ol>
-                <li>Write your code.</li>
-                <li>Click the Run Code button.</li>
-                <li>I'll tell you if you got it right.</li>
-            </ol>
+            <h3>Prompt</h3>
+            <p><code>prompt</code> is similar to <code>alert</code>, except the popup will have an area that users can type into. <code>prompt</code> will return what the user typed.</p>
+            
+            <pre><code>let input = prompt("Enter some text.");
+console.log("You typed " + input);</code></pre>
+
+            <h2>Task</h2>
+            <p>There's no task for this mini-tutorial. Just try using <code>alert</code> and <code>prompt</code> in the editor.</p>
+
         </div>
 
         <div id="right-editor">
         
-            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea><br>
+            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here...">alert("Try using the two methods to create something!");</textarea><br>
             <textarea id="resultarea" cols="80" rows="5" placeholder="Result shows up here..." readonly></textarea><br>
             <button onClick="runCode()">Run Code</button>
             <p id="resulttext"></p>
@@ -38,10 +42,13 @@
 
 let codeArea = document.getElementById("codearea");
 let resultArea = document.getElementById("resultarea");
-let resultText = document.getElementById("resulttext");
 
 /* Hooked console.log writes to this */
 let results;
+
+function demoAlert() {
+    alert("ALERT! You clicked a button.");
+}
 
 function runCode() {
 
@@ -69,20 +76,8 @@ function runCode() {
 
         /* Exception, exit early. */
         resultArea.value = exception;    
-        resultText.innerHTML = "Your code had an error. Try again.";
         return;
     
-    }
-
-    /* Verify results. */
-    if(results.length > 0) {
-        if(results[0] === "Hello World") {
-            resultText.innerHTML = "Good job! You did it!!";
-        } else {
-            resultText.innerHTML = "You printed the wrong thing.";
-        }
-    } else {
-        resultText.innerHTML = "You didn't print anything...";
     }
 
 }
