@@ -1,19 +1,74 @@
 <html>
+
+    <head>
+        <title>Hello World in JavaScript</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
     <body>
+        
         <h1>Hello World in Javascript</h1>
-        <textarea id="codearea">/* Your code go here */</textarea>
-        <button onClick="runCode()">Run</button>
+
+        <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea>
+        <textarea id="resultarea" cols="80" rows="5" placeholder="Result shows up here..."></textarea><br>
+        <button onClick="runCode()">Run Code</button>
+        <p id="resulttext"></p>
+
         <script>
 
 let codeArea = document.getElementById("codearea");
+let resultArea = document.getElementById("resultarea");
+let resultText = document.getElementById("resulttext");
+
+/* Hooked console.log writes to this */
+let results;
 
 function runCode() {
 
+    /* Get code. */
     let code = codeArea.value;
-    console.log("the entered code was " + code);
+
+    /* Reset results. */
+    results = [];
+    resultArea.value = "";
+
+    /* Hook into console.log */
+    console.oldLog = console.log;
+    console.log = function(value) {
+        results.push(value);
+        resultArea.value += value + "\n";
+    }
+
+    /* Run code */
+    try {
+        
+        /* Evaluate the code. */
+        eval(code);
+
+    } catch(exception) {
+
+        /* Exception, exit early. */
+        resultArea.value = exception;    
+        resultText.innerHTML = "Your code had an error. Try again.";
+        return;
+    
+    }
+
+    /* Verify results. */
+    if(results.length > 0) {
+        if(results[0] === "Hello World") {
+            resultText.innerHTML = "Good job! You did it!!";
+        } else {
+            resultText.innerHTML = "You printed the wrong thing.";
+        }
+    } else {
+        resultText.innerHTML = "You didn't print anything...";
+    }
 
 }
 
         </script>
+    
     </body>
+
 </html>
