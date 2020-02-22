@@ -1,4 +1,6 @@
 body {
+ 
+    font-family: Segoe UI, Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
@@ -8,13 +10,23 @@ textarea {
 }
 
 button {
+    width: 8.0em;
+
     background-color: #ff0000;
     color: #ffffff;
 
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
 
     padding: 1.0em;
     
     font-size: 1.0em;
+
+    transition-duration: 0.3s;
+}
+
+button:hover {
+
+    background-color: #0000ff;
+    
 }
