@@ -100,8 +100,10 @@ function runCode() {
         resultArea.value += value + "\n";
     }
 
-    /* Attach if statement to check if code is right. */
-
+    /* Check if they used a while and a for loop */
+    if("for" in code == true && "while" in code == true) {
+        loopFound = true
+    }
     /* Run code */
     try {
         
@@ -118,10 +120,10 @@ function runCode() {
     }
 
     /* Verify results. */
-    // if(!variablesCorrect) {
-    //     resultText.innerHTML = "You didn't set the variables to the right values.";
-    //     return;
-    // }
+    if(!variablesCorrect) {
+        resultText.innerHTML = "Your code did not have the correct loops";
+        return;
+    }
 
     if(results.length > 7) {
     
