@@ -1,12 +1,18 @@
 body {
- 
+
     font-family: Segoe UI, Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
 textarea {
+    outline: none;
+    
+    width: 100%;
+
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+
+    resize: none;
 }
 
 button {
@@ -29,4 +35,24 @@ button:hover {
 
     background-color: #0000ff;
     
+}
+
+#left-explanation {
+    height: 100%;
+    width: 49%;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    left: 0;
+    padding: 10px;
+}
+
+#right-editor {
+    height: 100%;
+    width: 49%;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    right: 0;
+    padding: 10px;
 }
