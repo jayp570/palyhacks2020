@@ -1,0 +1,100 @@
+<html>
+
+    <head>
+        <title>Variables 1 in JavaScript</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        
+        <div id="left-explanation">
+            <h1 style="margin: 0px;">Variables 1</h1>
+            <p>In this tutorial I'll teach you about the basics of variables.</p>
+
+            <h2>Explanation</h2>
+            <p>Explanation goes here.</p>
+            
+            <h2>Task</h2>
+            <p>Create a variable called <code>a</code>, and assign 4 to it. Print it to the console.</p>
+            <p>Create a variable called <code>b</code>, and assign 8 to it. Print it to the console.</p>
+            <p>Create a variable called <code>x</code>, and assign <code>a + b</code> to it. Print it to the console.</p>
+            <p>Modify <code>x</code> to contain <code>a - b</code> to it. Print it to the console</p>
+            <p>Modify <code>x</code> to contain <code>a * b</code> to it. Print it to the console</p>
+            <p>Modify <code>x</code> to contain <code>a / b</code> to it. Print it to the console</p>
+
+
+            <h2>Instructions</h2>
+            <ol>
+                <li>Write your code.</li>
+                <li>Click the Run Code button.</li>
+                <li>I'll tell you if you got it right.</li>
+            </ol>
+        </div>
+
+        <div id="right-editor">
+        
+            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea><br>
+            <textarea id="resultarea" cols="80" rows="5" placeholder="Result shows up here..." readonly></textarea><br>
+            <button onClick="runCode()">Run Code</button>
+            <p id="resulttext"></p>
+        
+        </div>
+
+        <script>
+
+let codeArea = document.getElementById("codearea");
+let resultArea = document.getElementById("resultarea");
+let resultText = document.getElementById("resulttext");
+
+/* Hooked console.log writes to this */
+let results;
+
+function runCode() {
+
+    /* Get code. */
+    let code = codeArea.value;
+
+    /* Reset results. */
+    results = [];
+    resultArea.value = "";
+
+    /* Hook into console.log */
+    console.oldLog = console.log;
+    console.log = function(value) {
+        results.push(value);
+        resultArea.value += value + "\n";
+    }
+
+    /* Run code */
+    try {
+        
+        /* Evaluate the code. */
+        eval(code);
+
+    } catch(exception) {
+
+        /* Exception, exit early. */
+        resultArea.value = exception;    
+        resultText.innerHTML = "Your code had an error. Try again.";
+        return;
+    
+    }
+
+    /* Verify results. */
+    if(results.length > 5) {
+        if(results[0] === 4 && results[1] === 8 && results[2] === 12 && results[3] === -4 && results[4] === 32 && results[5] === 0.5) {
+            resultText.innerHTML = "Good job! You did it!!";
+        } else {
+            resultText.innerHTML = "You printed the wrong thing.";
+        }
+    } else {
+        resultText.innerHTML = "You didn't print anything...";
+    }
+
+}
+
+        </script>
+    
+    </body>
+
+</html>
