@@ -1,50 +1,30 @@
 <html>
 
     <head>
-        <title>Variables 1 in JavaScript</title>
+        <title>If-Else in JavaScript</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         
         <div id="left-explanation">
-            <h1 style="margin: 0px;">Variables 1</h1>
-            <p>In this tutorial you'll learn about the basics of variables.</p>
+            <h1 style="margin: 0px;">If-Else</h1>
+            <p>In this tutorial you'll learn about conditional statements in JavaScripts.</p>
 
             <h2>Explanation</h2>
-            <p>A big part of JS is <b>variables</b>. A variable is a piece of data with a name. You can change its value throughout the program.</p>
-            
-            <h3>Creation</h3>
-            <p>You can create a variable with the <code>let</code> keyword. You can create a variable and assign something to it later, or immediately give it a value.</p>
+            <p>Conditional statements allow you to do different thing based on whether a condition is true.</p>
 
-            <pre><code>/* Assign at creation. */
-let myVariable = 5;
+            <h3>Syntax</h3>
+            <p>The general syntax of an if statement is like this:</p>
 
-/* Give value later. */
-let otherVariable;
+            <pre><code>if(condition) {
+    statement;
+}</code></pre>
 
-otherVariable = "Tacos";</code></pre>
+            <p>If <code>condition</code> is <code>true</code>, <code>statement</code> will be run. It's quite simple.</p>
 
-            <h3>Usage</h3>
-            <p>To refer to the value of a variable, just use its name.</p>
-            <p>Use the <code>=</Code> to assign a value to the variable.</p>
-            <pre><code>let breakfast = "pancakes";
-console.log(breakfast);     /* This prints "pancakes". */
-
-breakfast = "waffles";
-console.log(breakfast);     /* What does it print now? */</code></pre>
-
-            <h3>What can you store in variables?</h3>
-            <p>Variables in JS can store a few types of data.</p>
-            <ul>
-                <li>Numbers</li>
-                <li>Strings (text)</li>
-                <li>Booleans (true/false)</li>
-                <li>Lists</li>
-                <li>Objects</li>
-            </ul>
-
-            <p>In this tutorial you learned about the basics of numbers and strings. In the future you'll learn about other datatypes.</p>
+            <h3>Else statements</h3>
+            <p>If statements also have an extension, <code>else</code>. The code in the <code>else</code> statement if the code in the <code>if</code> statement <b>isn't</b> executed.</p>
 
             <h2>Task</h2>
             <p>Create a variable called <code>a</code> and assign 5 to it. Print it to the console.</p>
