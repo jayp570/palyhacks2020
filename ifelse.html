@@ -35,6 +35,15 @@
                 <li>Click the Run Code button.</li>
                 <li>I'll tell you if you got it right.</li>
             </ol>
+
+            <h2>Bug</h2>
+            <p>When you added 5, you might have noticed that instead of adding it arithmetically, JS just tacked the 5 onto the number. This is because <code>prompt</code> returns a string. Addition on a string and a number will simply concatenate the two.</p>
+            <pre><code>2 + 2 = 4
+"2" + 2 = "22"
+"2" - 2 = 0
+"stuff" - 2 = NaN</code></pre>
+
+            <p></p>
         </div>
 
         <div id="right-editor">
