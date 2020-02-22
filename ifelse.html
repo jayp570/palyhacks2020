@@ -27,7 +27,7 @@
             <p>If statements also have an extension, <code>else</code>. The code in the <code>else</code> statement if the code in the <code>if</code> statement <b>isn't</b> executed.</p>
 
             <h2>Task</h2>
-            <p>C
+            <p>Read input from the user with <code>prompt</code>. If the input is greater than 7, print the number. Otherwise, print the number plus five.</p>
 
             <h2>Instructions</h2>
             <ol>
@@ -54,9 +54,7 @@ let resultText = document.getElementById("resulttext");
 
 /* Hooked console.log writes to this */
 let results;
-
-/* Did the user create the variables? */
-let variablesCorrect;
+let gResult = 0;
 
 function runCode() {
 
@@ -65,7 +63,6 @@ function runCode() {
 
     /* Reset results. */
     results = [];
-    variablesCorrect = false;
     resultArea.value = "";
 
     /* Hook into console.log */
@@ -75,10 +72,7 @@ function runCode() {
         resultArea.value += value + "\n";
     }
 
-    /* Attach if statement to check if code is right. */
-    code += "\nif(a === 5 && b === \"i <3 js\") variablesCorrect = true;";
-
-    /* Run code */
+    /* Run code, 1st pass (just for show) */
     try {
         
         /* Evaluate the code. */
@@ -93,26 +87,44 @@ function runCode() {
     
     }
 
-    /* Verify results. */
-    if(!variablesCorrect) {
-        resultText.innerHTML = "You didn't set the variables to the right values.";
+    /* Check if user printed. */
+    if(results.length == 0) {
+        console.log("You didn't print anything.");
         return;
+    } 
+
+    /* Hook prompt() and rerun code */
+    console.log = function(value) {
+        gResult = value;
+    }
+    let oldPrompt = prompt;
+    let value = Math.random() * 20;
+    prompt = function() { return value; }
+
+    /* Rerun code */
+    try {
+        eval(code);
+    } catch(exception) {
+
+        /* Exception, exit early. */
+        resultArea.value = exception;    
+        resultText.innerHTML = "Your code had an error. Try again.";
+        return;
+    
     }
 
-    if(results.length > 0) {
-    
-        if(results.length == 2) {
-            if(results[0] === 5 && results[1] === "i <3 js") {
-                resultText.innerHTML = "Good job! You did it!!";
-            } else {
-                resultText.innerHTML = "You printed the wrong values.";
-            }
+    /* Verify output */
+    if(results.length == 0) {
+        resultText.innerHTML = "You didn't print anything...";
+    } else {
+
+        /* Verify line 1. */
+        if(value > 7 && gResult == value || value < 7 && gResult == value + 5) {
+            resultText.innerHTML = "Good job!"    
         } else {
-            resultText.innerHTML = "You were only supposed to print 2 things.";
+            resultText.innerHTML = "No.";
         }
 
-    } else {
-        resultText.innerHTML = "You didn't print anything...";  
     }
 
 }
