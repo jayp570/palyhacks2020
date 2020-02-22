@@ -1,0 +1,148 @@
+<html>
+
+    <head>
+        <title>Loops in Javascript</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        
+        <div id="left-explanation">
+            <h1 style="margin: 0px;">While and For Loops</h1>
+            <p>In this tutorial you'll learn while and for loops.</p>
+
+            <h2>Explanation</h2>
+            <p>A big part of JS is <b>variables</b>. A variable is a piece of data with a name. You can change its value throughout the program.</p>
+            
+            <h3>Creation</h3>
+            <p>You can create a variable with the <code>let</code> keyword. You can create a variable and assign something to it later, or immediately give it a value.</p>
+
+            <pre><code>/* Assign at creation. */
+let myVariable = 5;
+
+/* Give value later. */
+let otherVariable;
+
+otherVariable = "Tacos";</code></pre>
+
+            <h3>Usage</h3>
+            <p>To refer to the value of a variable, just use its name.</p>
+            <p>Use the <code>=</Code> to assign a value to the variable.</p>
+            <pre><code>let breakfast = "pancakes";
+console.log(breakfast);     /* This prints "pancakes". */
+
+breakfast = "waffles";
+console.log(breakfast);     /* What does it print now? */</code></pre>
+
+            <h3>What can you store in variables?</h3>
+            <p>Variables in JS can store a few types of data.</p>
+            <ul>
+                <li>Numbers</li>
+                <li>Strings (text)</li>
+                <li>Booleans (true/false)</li>
+                <li>Lists</li>
+                <li>Objects</li>
+            </ul>
+
+            <p>In this tutorial you learned about the basics of numbers and strings. In the future you'll learn about other datatypes.</p>
+
+            <h2>Task</h2>
+            <p>Create a while loop that writes "i &lt;3 js" to the console four times</p>
+            <p>Create a for loop that writes "i &lt;3 js" to the console three times</p>
+
+            <!-- OK SO BASICALLY you cant use the < or > characters since it conufses the editor/browser so
+            &lt; is <
+            &gt; is >-->
+
+            <h2>Instructions</h2>
+            <ol>
+                <li>Write your code.</li>
+                <li>Click the Run Code button.</li>
+                <li>I'll tell you if you got it right.</li>
+            </ol>
+        </div>
+
+        <div id="right-editor">
+        
+            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea><br>
+            <textarea id="resultarea" cols="80" rows="5" placeholder="Result shows up here..." readonly></textarea><br>
+            <button onClick="runCode()">Run Code</button>
+            <p id="resulttext"></p>
+        
+        </div>
+
+        <script>
+
+let codeArea = document.getElementById("codearea");
+let resultArea = document.getElementById("resultarea");
+let resultText = document.getElementById("resulttext");
+
+/* Hooked console.log writes to this */
+let results;
+
+/* Did the user create the variables? */
+let variablesCorrect;
+
+function runCode() {
+
+    /* Get code. */
+    let code = codeArea.value;
+
+    /* Reset results. */
+    results = [];
+    loopFound = false;
+    resultArea.value = "";
+
+    /* Hook into console.log */
+    console.oldLog = console.log;
+    console.log = function(value) {
+        results.push(value);
+        resultArea.value += value + "\n";
+    }
+
+    /* Attach if statement to check if code is right. */
+
+    /* Run code */
+    try {
+        
+        /* Evaluate the code. */
+        eval(code);
+
+    } catch(exception) {
+
+        /* Exception, exit early. */
+        resultArea.value = exception;    
+        resultText.innerHTML = "Your code had an error. Try again.";
+        return;
+    
+    }
+
+    /* Verify results. */
+    // if(!variablesCorrect) {
+    //     resultText.innerHTML = "You didn't set the variables to the right values.";
+    //     return;
+    // }
+
+    if(results.length > 7) {
+    
+        if(results.length == 7) {
+            if(results[0] === "i <3 js" && results[1] === "i <3 js" && results[2] === "i <3 js" && results[3] === "i <3 js" && results[4] === "i <3 js" && results[5] === "i <3 js" && results[6] === "i <3 js") {
+                resultText.innerHTML = "Good job! You did it!!";
+            } else {
+                resultText.innerHTML = "You printed the wrong messages.";
+            }
+        } else {
+            resultText.innerHTML = "You were only supposed to print 7 things.";
+        }
+
+    } else {
+        resultText.innerHTML = "Your output was incorrect.";  
+    }
+
+}
+
+        </script>
+    
+    </body>
+
+</html>
