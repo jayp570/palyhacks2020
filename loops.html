@@ -12,42 +12,53 @@
             <p>In this tutorial you'll learn while and for loops.</p>
 
             <h2>Explanation</h2>
-            <p>A big part of JS is <b>variables</b>. A variable is a piece of data with a name. You can change its value throughout the program.</p>
+            <p>Loops in any programming language allows you to repeat an action multiple times.</p>
+            <p>They can be super useful!</p>
             
             <h3>Creation</h3>
             <p>You can create a variable with the <code>let</code> keyword. You can create a variable and assign something to it later, or immediately give it a value.</p>
 
-            <pre><code>/* Assign at creation. */
-let myVariable = 5;
-
-/* Give value later. */
-let otherVariable;
-
-otherVariable = "Tacos";</code></pre>
+            <pre><code>
+let x = /* integer */
+while(/* condition */) {
+    /* your code */
+    /* increment */
+}
+    
+//Examples
+let y = 0
+while(y > 3) {
+    console.log("stuff")
+    y++ /* increments y by 1 */
+}
+/* Output would be:
+stuff
+stuff
+stuff */
+    
+let z = 0
+while(y z 5) {
+    console.log("stuff")
+    z+=2 /* increments z by 2 */
+}
+/* Output would be:
+stuff
+stuff */
+                            </code></pre>
+                
 
             <h3>Usage</h3>
-            <p>To refer to the value of a variable, just use its name.</p>
-            <p>Use the <code>=</Code> to assign a value to the variable.</p>
-            <pre><code>let breakfast = "pancakes";
-console.log(breakfast); /* This prints "pancakes". */
-
-breakfast = "waffles";
-console.log(breakfast); /* What does it print now? */</code></pre>
-
-            <h3>What can you store in variables?</h3>
-            <p>Variables in JS can store a few types of data.</p>
-            <ul>
-                <li>Numbers</li>
-                <li>Strings (text)</li>
-                <li>Booleans (true/false)</li>
-                <li>Lists</li>
-                <li>Objects</li>
-            </ul>
-
-            <p>In this tutorial you learned about the basics of numbers and strings. In the future you'll learn about other datatypes.</p>
+            <ol>
+                <li>While loops allow you to repeat an action as long as a condition is currently valid.</li>
+                <li>For loops allow you to repeat an action with a changing integer based on the number of repititions.</li>
+            </ol>
 
             <h2>Task</h2>
-            <p>Create a while loop that writes "i &lt;3 js" to the console seven times</p>
+            <ol>
+                <li>Create a while loop that writes "i &lt;3 js" to the console four times.</li>
+                <li>Create a for loop that writes "i &lt;3 js" to the console three times.</li>
+            </ol>
+
 
             <button id="toggle" onclick="toggle(); reloadStyles();">Toggle dark/light mode</button>
 
