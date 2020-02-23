@@ -8,8 +8,8 @@
     <body>
         
         <div id="left-explanation">
-            <h1 style="margin: 0px;">Functions 1</h1>
-            <p>In this tutorial you'll learn about functions in JavaScript.</p>
+            <h1 style="margin: 0px;">Functions 2</h1>
+            <p>In this tutorial you'll learn about functions' parameters in JavaScript.</p>
 
             <h2>Explanation</h2>
             <p>JS's arrays are one of the reasons the language is so powerful. A array is a special type of variable that can store many values in it. Instead of creating dozens of variables manually, you can use an array.</p>
@@ -39,8 +39,8 @@
                 <li><code>"js &lt;3 me \n"</code></li>
             </ol>
             <p>Call the function twice using a for loop or a while loop.</p>
-            <p>Note: <code>\</code> denotes an <b>escape sequence</b></p>
-            <p>An <a href="escapesequences.html" target="_blank">escape sequence</a> is a combination of characters that represents a character than you cannot express through text, such as a new line <code>\n</code> and a double quote <code>\"</code></p>
+            <p>Note: <code>\</code> denotes an <b>escape sequence</b>.</p>
+            <p>An <a href="escapesequences.html" target="_blank">escape sequence</a> is a combination of characters that represents a character than you cannot express through text, such as a new line (<code>\n</code>) and a double quote (<code>\"</code>).</p>
 
             <h2>Instructions</h2>
             <ol>
@@ -52,7 +52,7 @@
 
         <div id="right-editor">
         
-            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here...">/* Write your code here. */</textarea><br>
+            <textarea id="codearea" cols="80" rows="50" placeholder="Code goes here...">/* Write your code here. */</textarea><br>
             <textarea id="resultarea" cols="80" rows="10" placeholder="Result shows up here..." readonly>The result of your program will show up here.</textarea><br>
             <button onClick="runCode()" id="gobutton">Run Code</button>
             <p id="resulttext"></p>
@@ -85,12 +85,12 @@ function runCode() {
 
     /* Get code. */
     let code = codeArea.value;
-    let functionFound = false
+
+
 
     /* Reset results. */
     results = [];
     resultArea.value = "";
-    resultArea.style.color = "#ffffff";
 
     /* Hook into console.log */
     console.oldLog = console.log;
@@ -115,22 +115,15 @@ function runCode() {
     
     }
 
-    if(code.indexOf("function") >= 0) {
-        functionFound = true
-    } else {
-        resultText.innerHTML = "Your code did not use functions."
-        return
-    }
-
     /* Verify results. */
     if(results.length >= 4) {
-        if(checkOutput(results,[0,2],"i <3 js") === true && checkOutput(results,[1,3],"js <3 me \n") === true) {
+        if(checkOutput(results,[0,2],"i <3 js") === true && checkOutput(results,[1,3],"i <3 js") === true) {
             resultText.innerHTML = "Good job! You did it!!";
         } else {
             resultText.innerHTML = "You printed the wrong thing.";
         }
     } else {
-        resultText.innerHTML = "You didn't print enough times.";
+        resultText.innerHTML = "You didn't print anything...";
     }
 
 }
