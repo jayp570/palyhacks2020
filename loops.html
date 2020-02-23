@@ -1,14 +1,14 @@
 <html>
 
     <head>
-        <title>Loops in Javascript</title>
+        <title>While Loops in Javascript</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         
         <div id="left-explanation">
-            <h1 style="margin: 0px;">While and For Loops</h1>
+            <h1 style="margin: 0px;">While Loops</h1>
             <p>In this tutorial you'll learn while and for loops.</p>
 
             <h2>Explanation</h2>
@@ -47,19 +47,11 @@ console.log(breakfast);     /* What does it print now? */</code></pre>
             <p>In this tutorial you learned about the basics of numbers and strings. In the future you'll learn about other datatypes.</p>
 
             <h2>Task</h2>
-            <p>Create a while loop that writes "i &lt;3 js" to the console four times</p>
-            <p>Create a for loop that writes "i &lt;3 js" to the console three times</p>
+            <p>Create a while loop that writes "i &lt;3 js" to the console seven times</p>
 
             <!-- OK SO BASICALLY you cant use the < or > characters since it conufses the editor/browser so
             &lt; is <
             &gt; is >-->
-
-            <h2>Instructions</h2>
-            <ol>
-                <li>Write your code.</li>
-                <li>Click the Run Code button.</li>
-                <li>I'll tell you if you got it right.</li>
-            </ol>
         </div>
 
         <div id="right-editor">
@@ -81,7 +73,7 @@ let resultText = document.getElementById("resulttext");
 let results;
 
 /* Did the user create the variables? */
-let variablesCorrect;
+
 
 function runCode() {
 
@@ -90,7 +82,7 @@ function runCode() {
 
     /* Reset results. */
     results = [];
-    loopFound = false;
+    let loopFound = false;
     resultArea.value = "";
 
     /* Hook into console.log */
@@ -101,9 +93,15 @@ function runCode() {
     }
 
     /* Check if they used a while and a for loop */
-    if("for" in code == true && "while" in code == true) {
-        loopFound = true
+    function check(code) {
+        for(let i = 0; i < code.length-4; i++) {
+            if(code[i] == "w" && code[i+1] == "h" && code[i+2] == "i" && code[i+3] == "l" && code[i+4] == "e") {
+                return true
+            }
+        }
+        return false
     }
+    loopFound = check(code)
     /* Run code */
     try {
         
@@ -120,7 +118,7 @@ function runCode() {
     }
 
     /* Verify results. */
-    if(!variablesCorrect) {
+    if(loopFound === false) {
         resultText.innerHTML = "Your code did not have the correct loops";
         return;
     }
