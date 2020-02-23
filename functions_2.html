@@ -96,10 +96,19 @@ function runCode() {
         results.push(value);
         resultArea.value += value + "\n";
     }
+    
+    if(code.indexOf("function") >= 0) {
+        functionFound = true
+    } else {
+        resultText.innerHTML = "Your code did not use functions."
+        return
+    }
+
     code += ("\nif(checkNum(3) === \"this number is a good number\" && checkNum(4) === \"this number is a bad number\"  && checkNum(6) === \"this number is a bad number\"){usedIf = false}")
 
     if(usedIf === false) {
         resultText.innerHTML = "Your code did not use if statements correctly"
+        return
     }
 
     /* Run code */
@@ -118,12 +127,6 @@ function runCode() {
     
     }
 
-    if(code.indexOf("function") >= 0) {
-        functionFound = true
-    } else {
-        resultText.innerHTML = "Your code did not use functions."
-        return
-    }
 
     /* Verify results. */
     if(results.length >= 3) {
