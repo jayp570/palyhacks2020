@@ -1,25 +1,36 @@
 <html>
 
     <head>
-        <title>Hello World in JavaScript</title>
+        <title>Arrays in JavaScript</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         
         <div id="left-explanation">
-            <h1 style="margin: 0px;">Hello World</h1>
-            <p>In this tutorial you'll learn about lists in JavaScript.</p>
+            <h1 style="margin: 0px;">Arrays</h1>
+            <p>In this tutorial you'll learn about arrays in JavaScript.</p>
 
             <h2>Explanation</h2>
-            <p>This is the beginning of any programming language, printing.</p>
-            <p>Using console.log, you can display messages in the console.</p>
+            <p>JS's arrays are one of the reasons the language is so powerful. A array is a special type of variable that can store many values in it. Instead of creating dozens of variables manually, you can use an array.</p>
 
-            <h2>Usage</h2>
-            <p>To print a message in the console, start off by typing "console.log"</p>
-            <p>Then type a pair of parentheses and type your message surrounded</p>
-            <p>by quotes inside the parentheses.</p>
-            <p><code>/* console.log("message here") */</code></p>
+            <h3>Creation</h3>
+            <p>There are several ways to create an array. The easiest is to just assign it to a variable.</p>
+            <pre><code>let languages = ["C", "Python", "JavaScript", "PHP"];</code></pre>
+            <p>This is called an <b>array literal</b>.</p>
+
+            <p>If you want to create an empty array with a large number of elements, you can do this:</p>
+            <pre><code>let bigArray = new Array(500);</code></pre>
+
+            <h3>Access</h3>
+            <p>This is the syntax to access a specific element of an array:</p>
+            <pre><code>array[elementNumber]</code></pre>
+            
+            <p>For instance, if you wanted to get the 3rd item in the <code>languages</code> array, you would do <code>array[2]</code>.</p>
+            <p><i>Wait. Why 2, not 3? Is that a typo?</i> you might be asking. Actually, in most languages, arrays start counting from zero.</p>
+
+            <h3>Operations</h3>
+            <p>You can attach </p>
 
             <h2>Task</h2>
             <p>Print "Hello World" to the console. Make sure you print the string</p>
