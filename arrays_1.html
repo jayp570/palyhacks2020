@@ -82,7 +82,9 @@ function runCode() {
 
         /* Exception, exit early. */
         resultArea.value = exception;    
+        resultArea.style.color = "#ff0000";
         resultText.innerHTML = "Your code had an error. Try again.";
+
         return;
     
     }
