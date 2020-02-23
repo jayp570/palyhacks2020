@@ -12,41 +12,35 @@
             <p>In this tutorial you'll learn about arrays in JavaScript.</p>
 
             <h2>Explanation</h2>
-            <p>JS's arrays are one of the reasons the language is so powerful. A array is a special type of variable that can store many values in it. Instead of creating dozens of variables manually, you can use an array.</p>
+            <p>The arrays of Javascript are one of the reasons this language is so powerful. An array is a special datatype that acts as a list. Instead of creating dozens of variables manually, you can store and use them as an array.</p>
 
             <h3>Creation</h3>
-            <p>There are several ways to create an array. The easiest is to just assign it to a variable.</p>
+            <p>There are several ways to create an array, but the easiest way it to assign many values to 1 variable.</p>
             <pre><code>let languages = ["C", "Python", "JavaScript", "PHP"];</code></pre>
             <p>This is called an <b>array literal</b>.</p>
 
-            <p>If you want to create an empty array with a large number of elements, you can do this:</p>
+            <p>To create an empty array with a large number of elements, you can do this:</p>
+            <pre><code>Over here you are creating an array named "bigArray" with 500 values stored inside of it.</code></pre>
             <pre><code>let bigArray = new Array(500);</code></pre>
 
             <h3>Access</h3>
-            <p>This is the syntax to access a specific element of an array:</p>
-            <pre><code>array[elementNumber]</code></pre>
+            <p>This is how you access a specific value inside of an array:</p>
+            <pre><code>array_name[Index]</code></pre>
             
-            <p>For instance, if you wanted to get the 3rd item in the <code>languages</code> array, you would do <code>array[2]</code>.</p>
-            <p><i>Wait. Why 2, not 3? Is that a typo?</i> you might be asking. Actually, in most languages, arrays start counting from zero.</p>
+            <p>For instance, if you wanted to get the 3rd item in the "<code>languages</code>" array, you would do <code>languages[2]</code>.</p>
+            <p>You might be asking,"<i>Wait. But why 2, not 3? Is that a typo?</i>." Actually, in most languages, arrays start counting from zero.</p>
+            <p>So the first item of a list would have index 0, the second item of a list would have index 1, and so on.</p>
 
-            <h3>Operations</h3>
-            <p>You can attach </p>
 
             <h2>Task</h2>
             <p>Print "Hello World" to the console. Make sure you print the string</p>
             <p>letter for letter, this task is case-sensitive!</p>
 
-            <h2>Instructions</h2>
-            <ol>
-                <li>Write your code.</li>
-                <li>Click the Run Code button.</li>
-                <li>I'll tell you if you got it right.</li>
-            </ol>
         </div>
 
         <div id="right-editor">
         
-            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea><br>
+            <textarea id="codearea" cols="80" rows="50" placeholder="Code goes here..."></textarea><br>
             <textarea id="resultarea" cols="80" rows="10" placeholder="Result shows up here..." readonly></textarea><br>
             <button onClick="runCode()" id="gobutton">Run Code</button>
             <p id="resulttext"></p>
@@ -88,7 +82,9 @@ function runCode() {
 
         /* Exception, exit early. */
         resultArea.value = exception;    
+        resultArea.style.color = "#ff0000";
         resultText.innerHTML = "Your code had an error. Try again.";
+
         return;
     
     }
@@ -107,6 +103,7 @@ function runCode() {
 }
 
         </script>
+        <script src="tabfix.js"></script>
     
     </body>
 
