@@ -39,7 +39,7 @@ printParam(2,9,"i am")
             </code></pre>
 
             <h2>Task</h2>
-            <p>Make a function that prints out a message depending on the parameter passed in. If the number <code>3</code> is passed in to your function, the statement <code>this number is a good number</code> is printed out.
+            <p>Make a function named <code>checkNum</code> that prints out a message depending on the parameter passed in. If the number <code>3</code> is passed in to your function, the statement <code>this number is a good number</code> is printed out.
             However if an alternate number is passed in, print out <code>this number is a bad number</code>.</p>
             <p>Test the function with 3, 4, and 6 (in that order)</p>
             
@@ -82,7 +82,7 @@ function runCode() {
     /* Get code. */
     let code = codeArea.value;
     let functionFound = false
-    let usedIf = false
+    let usedIf = true
 
     /* Reset results. */
     results = [];
@@ -94,6 +94,11 @@ function runCode() {
     console.log = function(value) {
         results.push(value);
         resultArea.value += value + "\n";
+    }
+    code += ("\nif(checkNum(3) === \"this number is a good number\" && checkNum(4) === \"this number is a bad number\"  && checkNum(6) === \"this number is a bad number\"){usedIf = false}")
+
+    if(usedIf === false) {
+        resultText.innerHTML = "Your code did not use if statements correctly"
     }
 
     /* Run code */
