@@ -18,7 +18,7 @@
             <h2>Usage</h2>
             <p>To print a message in the console, start off by typing "console.log"</p>
             <p>Then type a pair of parentheses and type your message surrounded by quotes inside the parentheses.</p>
-            <p><code>/* console.log("message here") */</code></p>
+            <p><code>console.log("message here");</code></p>
 
             <h2>Task</h2>
             <ol>
@@ -32,11 +32,12 @@
                 <li>Click the Run Code button.</li>
                 <li>I'll tell you if you got it right.</li>
             </ol>
+
         </div>
 
         <div id="right-editor">
         
-            <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea><br>
+            <textarea id="codearea" cols="80" rows="50" placeholder="Code goes here..."></textarea><br>
             <textarea id="resultarea" cols="80" rows="10" placeholder="Result shows up here..." readonly></textarea><br>
             <button onClick="runCode()" id="gobutton">Run Code</button>
             <p id="resulttext"></p>
@@ -78,6 +79,7 @@ function runCode() {
 
         /* Exception, exit early. */
         resultArea.value = exception;    
+        resultArea.style.color = "#ff0000";
         resultText.innerHTML = "Your code had an error. Try again.";
         return;
     
@@ -97,7 +99,8 @@ function runCode() {
 }
 
         </script>
-    
+        <script src="tabfix.js"></script>
+
     </body>
 
 </html>

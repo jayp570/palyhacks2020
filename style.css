@@ -1,7 +1,8 @@
 body {
-
     font-family: Segoe UI, Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #dddddd;
+    
+    color: #ffffff;
+    background-color: #333333;
 }
 
 textarea {
@@ -16,21 +17,23 @@ textarea {
 }
 
 #codearea {
-    background: #f5f5f5;
-    color: #000000;
+    background: #111111;
+    color: #ffffff;
     border: none;
+    padding: 0.4em;
 }
 
 #resultarea {
-    background: #000000;
+    background: #333333;
     color: #ffffff;
     border: none;
 }
 
 #gobutton {
     width: 8.0em;
+    height: 3.0em;
 
-    background-color: #ff0000;
+    background-color: #009900;
     color: #ffffff;
 
     border: none;
@@ -41,12 +44,17 @@ textarea {
     font-size: 1.0em;
 
     transition-duration: 0.3s;
-}
+    
+    outline: none;
 
+}
 #gobutton:hover {
 
-    background-color: #0000ff;
+    background-color: #00ee00;
     
+}
+#gobutton:active {
+
 }
 
 #left-explanation {
@@ -57,7 +65,7 @@ textarea {
     overflow-x: hidden;
     left: 0;
     padding: 10px;
-    background-color: #eeeeee;
+    background-color: #222222;
 }
 
 #left-explanation::-webkit-scrollbar {
@@ -90,11 +98,12 @@ textarea {
 
 code {
     font-size: 1.1em;
-    background: #ffffff;
+    background: #111111;
     padding: 2px;
+    color: #ffffff;
 }
 
 pre {
-    background: #ffffff;
+    background: #111111;
     padding: 5px;
 }
