@@ -12,25 +12,30 @@
             <p>In this tutorial you'll learn about functions in JavaScript.</p>
 
             <h2>Explanation</h2>
-            <p>JS's arrays are one of the reasons the language is so powerful. A array is a special type of variable that can store many values in it. Instead of creating dozens of variables manually, you can use an array.</p>
+            <p>A <code>function</code> is a form of abstraction, where a set series of code can be called upon anytime within the program. This can be helpful with creating large programs that have verbose code.</p>
 
             <h3>Creation</h3>
-            <p>There are several ways to create an array. The easiest is to just assign it to a variable.</p>
-            <pre><code>let languages = ["C", "Python", "JavaScript", "PHP"];</code></pre>
-            <p>This is called an <b>array literal</b>.</p>
+            <p>The following code is a demonstration portraying the creation of a function</p>
+            <pre><code>
+function /* function name */() {
+    /* your code */
+}
 
-            <p>If you want to create an empty array with a large number of elements, you can do this:</p>
-            <pre><code>let bigArray = new Array(500);</code></pre>
+//Examples
 
-            <h3>Access</h3>
-            <p>This is the syntax to access a specific element of an array:</p>
-            <pre><code>array[elementNumber]</code></pre>
-            
-            <p>For instance, if you wanted to get the 3rd item in the <code>languages</code> array, you would do <code>array[2]</code>.</p>
-            <p><i>Wait. Why 2, not 3? Is that a typo?</i> you might be asking. Actually, in most languages, arrays start counting from zero.</p>
-
-            <h3>Operations</h3>
-            <p>You can attach </p>
+function printStuff() {
+    console.log("stuff1")
+    console.log("stuff2")
+}
+printStuff()
+printStuff()
+/* Output would be:
+stuff1
+stuff2
+stuff1
+stuff2
+*/
+            </code></pre>
 
             <h2>Task</h2>
             <p>Make a function containing two <code>console.log()</code> statements printing the following messages to the console.</p>
@@ -40,14 +45,8 @@
             </ol>
             <p>Call the function twice using a for loop or a while loop.</p>
             <p>Note: <code>\</code> denotes an <b>escape sequence</b></p>
-            <p>An <a href="escapesequences.html" target="_blank">escape sequence</a> is a combination of characters that represents a character than you cannot express through text, such as a new line <code>\n</code> and a double quote <code>\"</code></p>
-
-            <h2>Instructions</h2>
-            <ol>
-                <li>Write your code.</li>
-                <li>Click the Run Code button.</li>
-                <li>I'll tell you if you got it right.</li>
-            </ol>
+            <p>An <a href="escapesequences.html" target="_blank">escape sequence</a> is a combination of characters that represents a character than you cannot express through text, such as a new line <code>\n</code> or a double quote <code>\"</code></p>
+            
         </div>
 
         <div id="right-editor">
