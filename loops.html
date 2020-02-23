@@ -49,6 +49,8 @@ console.log(breakfast); /* What does it print now? */</code></pre>
             <h2>Task</h2>
             <p>Create a while loop that writes "i &lt;3 js" to the console seven times</p>
 
+            <button id="toggle" onclick="toggle(); reloadStyles();">Toggle dark/light mode</button>
+
             <!-- OK SO BASICALLY you cant use the < or > characters since it conufses the editor/browser so
             &lt; is <
             &gt; is >-->
@@ -144,7 +146,18 @@ function runCode() {
 let reloadStyles = function() {
     if(sessionStorage.getItem("mode") === "dark")
         document.getElementById("stylesheet").setAttribute("href", "darkmode-style.css");
+    else
+        document.getElementById("stylesheet").setAttribute("href", "style.css");
 }
+
+let toggle = function() {
+    if(sessionStorage.getItem("mode") === "dark") {
+        sessionStorage.setItem("mode", "light");
+    } else {
+        sessionStorage.setItem("mode", "dark");
+    }
+}
+
 
 /* Load dark mode / light mode CSS. */
 window.onload = reloadStyles;
