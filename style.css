@@ -15,6 +15,12 @@ textarea {
     resize: none;
 }
 
+#resultarea {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+}
+
 button {
     width: 8.0em;
 
