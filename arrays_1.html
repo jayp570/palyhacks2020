@@ -1,39 +1,47 @@
 <html>
 
     <head>
-        <title>Variables 2 in JavaScript</title>
+        <title>Arrays in JavaScript</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         
         <div id="left-explanation">
-            <h1 style="margin: 0px;">Variables 2</h1>
-            <p>In this tutorial you'll learn about the basics of integer operations.</p>
+            <h1 style="margin: 0px;">Arrays</h1>
+            <p>In this tutorial you'll learn about arrays in JavaScript.</p>
 
             <h2>Explanation</h2>
-            <p>Javascript has a basic arithmetic math operations such as:</p>
-                <ol>
-                    <li>"<code>+</code>"  --> addition</li>
-                    <li>"<code>-</code>"  --> subtraction</li>
-                    <li>"<code>*</code>"  --> multiplication</li>
-                    <li>"<code>/</code>"  --> division</li>
-                </ol>
+            <p>JS's arrays are one of the reasons the language is so powerful. A array is a special type of variable that can store many values in it. Instead of creating dozens of variables manually, you can use an array.</p>
+
+            <h3>Creation</h3>
+            <p>There are several ways to create an array. The easiest is to just assign it to a variable.</p>
+            <pre><code>let languages = ["C", "Python", "JavaScript", "PHP"];</code></pre>
+            <p>This is called an <b>array literal</b>.</p>
+
+            <p>If you want to create an empty array with a large number of elements, you can do this:</p>
+            <pre><code>let bigArray = new Array(500);</code></pre>
+
+            <h3>Access</h3>
+            <p>This is the syntax to access a specific element of an array:</p>
+            <pre><code>array[elementNumber]</code></pre>
             
-            <h2>Usage</h2>
-            <p>These symbols are used to make simple, yet effective, integer operations.</p>
+            <p>For instance, if you wanted to get the 3rd item in the <code>languages</code> array, you would do <code>array[2]</code>.</p>
+            <p><i>Wait. Why 2, not 3? Is that a typo?</i> you might be asking. Actually, in most languages, arrays start counting from zero.</p>
+
+            <h3>Operations</h3>
+            <p>You can attach </p>
 
             <h2>Task</h2>
+            <p>Print "Hello World" to the console. Make sure you print the string</p>
+            <p>letter for letter, this task is case-sensitive!</p>
+
+            <h2>Instructions</h2>
             <ol>
-                <li>Create the variable "<code>a</code>", with the value 4. Print it to the console.</li>
-                <li>Create the variable "<code>b</code>", with the value 8. Print it to the console.</li>
-                <li>Create the variable "<code>x</code>", and assign <code>a + b</code> to it. Print it to the console.</li>
-                <li>Modify "<code>x</code>" to contain "<code>a - b</code>" to it. Print it to the console.</li>
-                <li>Modify "<code>x</code>" to contain "<code>a * b</code>" to it. Print it to the console.</li>
-                <li>Modify "<code>x</code>" to contain "<code>a / b</code>" to it. Print it to the console.</li>
+                <li>Write your code.</li>
+                <li>Click the Run Code button.</li>
+                <li>I'll tell you if you got it right.</li>
             </ol>
-
-
         </div>
 
         <div id="right-editor">
@@ -53,7 +61,6 @@ let resultText = document.getElementById("resulttext");
 
 /* Hooked console.log writes to this */
 let results;
-let variablesCorrect;
 
 function runCode() {
 
@@ -63,7 +70,6 @@ function runCode() {
     /* Reset results. */
     results = [];
     resultArea.value = "";
-    variablesCorrect = false;
 
     /* Hook into console.log */
     console.oldLog = console.log;
@@ -71,9 +77,6 @@ function runCode() {
         results.push(value);
         resultArea.value += value + "\n";
     }
-
-    /* Verify variables */
-    code += "\nif(a == 4 && b == 8 && x == a / b) variablesCorrect = true";
 
     /* Run code */
     try {
@@ -90,14 +93,9 @@ function runCode() {
     
     }
 
-    if(!variablesCorrect) {
-        resultText.innerHTML = "You didn't set the variables to the right variables.";
-        return;
-    }
-
     /* Verify results. */
-    if(results.length > 5) {
-        if(results[0] === 4 && results[1] === 8 && results[2] === 12 && results[3] === -4 && results[4] === 32 && results[5] === 0.5) {
+    if(results.length > 0) {
+        if(results[0] === "Hello World") {
             resultText.innerHTML = "Good job! You did it!!";
         } else {
             resultText.innerHTML = "You printed the wrong thing.";
