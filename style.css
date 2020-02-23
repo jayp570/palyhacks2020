@@ -89,7 +89,7 @@ textarea {
     top: 3.0em;
     left: 0;
 
-    height: 100%;
+    height: calc(100% - 3.0em);
     width: 30%;
 
     overflow-x: hidden;
