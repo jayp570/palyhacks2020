@@ -31,7 +31,7 @@ textarea {
 #gobutton {
     width: 8.0em;
 
-    background-color: #ff0000;
+    background-color: #009900;
     color: #ffffff;
 
     border: none;
@@ -46,7 +46,7 @@ textarea {
 
 #gobutton:hover {
 
-    background-color: #0000ff;
+    background-color: #00ee00;
     
 }
 
