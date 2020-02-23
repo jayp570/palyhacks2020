@@ -44,6 +44,7 @@
             <textarea id="codearea" cols="80" rows="50" placeholder="Code goes here...">/* Write your code here. */</textarea><br>
             <textarea id="resultarea" cols="80" rows="10" placeholder="Result shows up here..." readonly>The result of your program will show up here.</textarea><br>
             <button onClick="runCode()" id="gobutton">Run Code</button>
+            <button onClick="progress()" id="nextbutton">Next</button>
             <p id="resulttext"></p>
         
         </div>
@@ -93,7 +94,8 @@ function runCode() {
     /* Verify results. */
     if(results.length > 0) {
         if(results[0] === "Hello World") {
-            resultText.innerHTML = "Good job! You did it!!";
+            resultText.innerHTML = "Good job!";
+            document.getElementById("nextbutton").style.opacity = 1;
         } else {
             resultText.innerHTML = "You printed the wrong thing.";
         }
@@ -101,6 +103,11 @@ function runCode() {
         resultText.innerHTML = "You didn't print anything...";
     }
 
+}
+
+function progress() {
+    localStorage.setItem("helloworld", "done");
+    window.location.href = "variables_1.html";
 }
 
         </script>

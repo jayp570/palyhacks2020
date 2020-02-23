@@ -55,6 +55,33 @@ textarea {
     
 }
 
+#nextbutton {
+    width: 8.0em;
+    height: 3.0em;
+
+    background-color: #009900;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 1.0em;
+    
+    font-size: 1.0em;
+
+    transition-duration: 1.0s;
+    
+    outline: none;
+    
+    opacity: 0;
+
+}
+#nextbutton:hover {
+
+    background-color: #00ee00;
+    
+}
+
 #top {
     height: 3.0em;
     width: 100%;
@@ -149,6 +176,7 @@ pre {
 
 a {
     color: #23a9f2;
+    text-decoration: none;
 }
 a:visited {
     color: #23a9f2;
