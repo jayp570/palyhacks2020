@@ -87,11 +87,10 @@ function runCode() {
     let code = codeArea.value;
     let functionFound = false
 
-
-
     /* Reset results. */
     results = [];
     resultArea.value = "";
+    resultArea.style.color = "#ffffff";
 
     /* Hook into console.log */
     console.oldLog = console.log;
