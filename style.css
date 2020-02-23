@@ -20,16 +20,18 @@ textarea {
     background: #111111;
     color: #ffffff;
     border: none;
+    padding: 0.4em;
 }
 
 #resultarea {
-    background: #111111;
+    background: #333333;
     color: #ffffff;
     border: none;
 }
 
 #gobutton {
     width: 8.0em;
+    height: 3.0em;
 
     background-color: #009900;
     color: #ffffff;
@@ -42,12 +44,17 @@ textarea {
     font-size: 1.0em;
 
     transition-duration: 0.3s;
-}
+    
+    outline: none;
 
+}
 #gobutton:hover {
 
     background-color: #00ee00;
     
+}
+#gobutton:active {
+
 }
 
 #left-explanation {
