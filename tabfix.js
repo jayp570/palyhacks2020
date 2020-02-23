@@ -6,8 +6,8 @@ for(let i = 0; i < textAreas.length; i++) {
         if(event.key == "Tab") {
             event.preventDefault();
             let select = this.selectionStart;
-            this.value = this.value.substring(0, this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
-            this.selectionEnd = select + 1;
+            this.value = this.value.substring(0, this.selectionStart) + "    " + this.value.substring(this.selectionEnd);
+            this.selectionEnd = select + 4;
         }
     });
 }
