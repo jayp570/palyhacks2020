@@ -83,13 +83,14 @@ textarea {
 }
 
 #left-explanation {
-    height: 100%;
-    width: 30%;
-
+    
     position: fixed;
 
     top: 3.0em;
     left: 0;
+
+    height: 100%;
+    width: 30%;
 
     overflow-x: hidden;
 
@@ -119,13 +120,14 @@ textarea {
 }
 
 #right-editor {
-    height: 100%;
-    width: 68%;
     
     position: fixed;
     
     top: 3.0em;
     right: 0;
+
+    height: 100%;
+    width: 68%;
 
     overflow-x: hidden;
     padding: 10px;
