@@ -135,6 +135,7 @@ function runCode() {
         if(results.length == 5) {
             if(results[0] === "i <3 js" && results[1] === "i <3 js" && results[2] === "i <3 js" && results[3] === "i <3 js" && results[4] === "i <3 js") {
                 resultText.innerHTML = "Good job! You did it!!";
+                document.getElementById("nextbutton").style.opacity = 1;
             } else {
                 resultText.innerHTML = "You printed the wrong messages.";
             }
