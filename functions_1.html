@@ -33,11 +33,12 @@
             <p>You can attach </p>
 
             <h2>Task</h2>
-            <p>Make a function containing two <code>console.log()</code> statements</p>
+            <p>Make a function containing two <code>console.log()</code> statements printing the following messages to the console.</p>
             <ol>
                 <li><code>"i &lt;3 js"</code></li>
                 <li><code>"js &lt;3 me \n"</code></li>
             </ol>
+            <p>Call the function twice using a for loop or a while loop.</p>
             <p>Note: <code>\</code> denotes an <b>escape sequence</b></p>
             <p>An <a href="escapesequences.html" target="_blank">escape sequence</a> is a combination of characters that represents a character than you cannot express through text, such as a new line <code>\n</code> and a double quote <code>\"</code></p>
 
@@ -67,10 +68,25 @@ let resultText = document.getElementById("resulttext");
 /* Hooked console.log writes to this */
 let results;
 
+function checkOutput(results,indexes,msg) {
+    bools = []
+    for(let i = 0; i < indexes; i++) {
+        if(results[indexes] === msg) {
+            bools.push(true)
+        }
+    }
+    if(bools.length === indexes.length) {
+        return true
+    }
+    return false
+}
+
 function runCode() {
 
     /* Get code. */
     let code = codeArea.value;
+
+
 
     /* Reset results. */
     results = [];
@@ -101,7 +117,7 @@ function runCode() {
 
     /* Verify results. */
     if(results.length > 0) {
-        if(results[0] === "Hello World") {
+        if(checkOutput(results,)) {
             resultText.innerHTML = "Good job! You did it!!";
         } else {
             resultText.innerHTML = "You printed the wrong thing.";
