@@ -132,6 +132,7 @@ function runCode() {
     if(results.length >= 3) {
         if(checkOutput(results,[0],"this number is a good number") && checkOutput(results,[1,2],"this number is a bad number")) {
             resultText.innerHTML = "Good job! You did it!!";
+            document.getElementById("nextbutton").style.opacity = 1;
         } else {
             resultText.innerHTML = "Your output is wrong.";
         }

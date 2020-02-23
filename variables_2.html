@@ -106,6 +106,7 @@ function runCode() {
     if(results.length > 5) {
         if(results[0] === 4 && results[1] === 8 && results[2] === 12 && results[3] === -4 && results[4] === 32 && results[5] === 0.5) {
             resultText.innerHTML = "Good job! You did it!!";
+            document.getElementById("nextbutton").style.opacity = 1;
         } else {
             resultText.innerHTML = "You printed the wrong thing.";
         }

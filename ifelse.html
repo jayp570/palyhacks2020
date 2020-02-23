@@ -142,6 +142,7 @@ function runCode() {
         /* Verify line 1. */
         if(value > 7 && gResult == value || value < 7 && gResult == value + 5) {
             resultText.innerHTML = "Good job!";
+            document.getElementById("nextbutton").style.opacity = 1;
 
             /* Unhide bug. */
             document.getElementById("bug").style.opacity = "1";

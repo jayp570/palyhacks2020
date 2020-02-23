@@ -96,6 +96,7 @@ function runCode() {
     if(results.length >= 4) {
         if(checkOutput(results,[0,2],"i <3 js") === true && checkOutput(results,[1,3],"i <3 js") === true) {
             resultText.innerHTML = "Good job! You did it!!";
+            document.getElementById("nextbutton").style.opacity = 1;
         } else {
             resultText.innerHTML = "You printed the wrong thing.";
         }
