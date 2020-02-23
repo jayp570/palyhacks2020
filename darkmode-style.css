@@ -28,7 +28,7 @@ textarea {
     border: none;
 }
 
-button {
+#gobutton {
     width: 8.0em;
 
     background-color: #ff0000;
@@ -44,7 +44,7 @@ button {
     transition-duration: 0.3s;
 }
 
-button:hover {
+#gobutton:hover {
 
     background-color: #0000ff;
     

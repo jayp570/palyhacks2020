@@ -2,7 +2,7 @@
 
     <head>
         <title>While Loops in Javascript</title>
-        <link rel="stylesheet" href="darkmode-style.css">
+        <link rel="stylesheet" href="style.css" id="stylesheet">
     </head>
 
     <body>
@@ -58,7 +58,7 @@ console.log(breakfast); /* What does it print now? */</code></pre>
         
             <textarea id="codearea" cols="80" rows="25" placeholder="Code goes here..."></textarea><br>
             <textarea id="resultarea" cols="80" rows="10" placeholder="Result shows up here..." readonly></textarea><br>
-            <button onClick="runCode()">Run Code</button>
+            <button onClick="runCode()" id="gobutton">Run Code</button>
             <p id="resulttext"></p>
         
         </div>
@@ -140,6 +140,14 @@ function runCode() {
     }
 
 }
+
+let reloadStyles = function() {
+    if(sessionStorage.getItem("mode") === "dark")
+        document.getElementById("stylesheet").setAttribute("href", "darkmode-style.css");
+}
+
+/* Load dark mode / light mode CSS. */
+window.onload = reloadStyles;
 
         </script>
     
