@@ -25,22 +25,23 @@
 function /* function name */(/* parameter 1, parameter 2, etc... */) {
     /* your code */
 }
-//Examples
-function printParam(num) {
-    console.log(num)
+
+//Example
+function printParam(num1, num2, word) {
+    console.log(num1, num2, word)
 }
-printParam(5)
-printParam(10)
+printParam(5,7,"stuff")
+printParam(2,9,"i am")
 /* Output would be:
-5
-10
+5 7 stuff
+2 9 i am
 */
             </code></pre>
 
             <h2>Task</h2>
             <p>Make a function that prints out a message depending on the parameter passed in. If the number <code>3</code> is passed in to your function, the statement <code>this number is a good number</code> is printed out.
             However if an alternate number is passed in, print out <code>this number is a bad number</code>.</p>
-            <p>Test the function with 3, 4, and 6</p>
+            <p>Test the function with 3, 4, and 6 (in that order)</p>
             
 
         </div>
@@ -81,6 +82,7 @@ function runCode() {
     /* Get code. */
     let code = codeArea.value;
     let functionFound = false
+    let usedIf = false
 
     /* Reset results. */
     results = [];
@@ -118,14 +120,14 @@ function runCode() {
     }
 
     /* Verify results. */
-    if(results.length >= 4) {
-        if(checkOutput(results,[0,2],"i <3 js") === true && checkOutput(results,[1,3],"js <3 me \n") === true) {
+    if(results.length >= 3) {
+        if(checkOutput(results,[0],"this number is a good number") && checkOutput(results,[1,2],"this number is a bad number")) {
             resultText.innerHTML = "Good job! You did it!!";
         } else {
-            resultText.innerHTML = "You printed the wrong thing.";
+            resultText.innerHTML = "Your output is wrong.";
         }
     } else {
-        resultText.innerHTML = "You didn't print enough times.";
+        resultText.innerHTML = "Your output is wrong.";
     }
 
 }
