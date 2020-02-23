@@ -1,7 +1,7 @@
 <html>
 
     <head>
-        <title>Functions in JavaScript</title>
+        <title>Parameters in JavaScript</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -12,8 +12,8 @@
         </div>
 
         <div id="left-explanation">
-            <h1 style="margin: 0px;">Functions 1</h1>
-            <p>In this tutorial you'll learn about functions in JavaScript.</p>
+            <h1 style="margin: 0px;">Parameters</h1>
+            <p>In this tutorial you'll learn about parameters in JavaScript.</p>
 
             <h2>Explanation</h2>
             <p>A <code>function</code> is a form of abstraction, where a set series of code can be called upon anytime within the program. This can be helpful with creating large programs that have verbose code.</p>
@@ -21,7 +21,7 @@
             <h3>Creation</h3>
             <p>The following code is a demonstration portraying the creation of a function</p>
             <pre><code>
-function /* function name */() {
+function /* function name */(/* parameters */) {
     /* your code */
 }
 
@@ -33,29 +33,22 @@ function /* function name */() {
 //Examples
 >>>>>>> 9dd86a7a908b9493a0bd8e1ff4285b85054f76f0
 
-function printStuff() {
-    console.log("stuff1")
-    console.log("stuff2")
+function printParam(num) {
+    console.log(num)
 }
-printStuff()
-printStuff()
+printParam(5)
+printParam(10)
 /* Output would be:
-stuff1
-stuff2
-stuff1
-stuff2
+5
+10
 */
             </code></pre>
 
             <h2>Task</h2>
-            <p>Make a function containing two <code>console.log()</code> statements printing the following messages to the console.</p>
-            <ol>
-                <li><code>"i &lt;3 js"</code></li>
-                <li><code>"js &lt;3 me \n"</code></li>
-            </ol>
-            <p>Call the function twice using a for loop or a while loop.</p>
-            <p>Note: <code>\</code> denotes an <b>escape sequence</b></p>
-            <p>An <a href="escapesequences.html" target="_blank">escape sequence</a> is a combination of characters that represents a character than you cannot express through text, such as a new line <code>\n</code> or a double quote <code>\"</code></p>
+            <p>Make a function that prints out a message depending on the parameter passed in. If the number <code>3</code> is passed in to your function, the statement <code>this number is a good number</code> is printed out.
+            However if an alternate number is passed in, print out <code>this number is a bad number</code>.</p>
+            <p>Test the function with 3, 4, and 6</p>
+            
 
         </div>
 
